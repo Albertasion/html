@@ -604,7 +604,10 @@ function get_picture_by_category ($cat_id) {
     'SELECT sc_products.productID, sc_products.categoryID, sc_products.default_picture, sc_products.viewed_times, sc_products.name_ru, sc_product_pictures.photoID, sc_product_pictures.productID, sc_product_pictures.filename, sc_product_pictures.enlarged 
     FROM sc_products 
     INNER JOIN sc_product_pictures 
-    ON sc_products.productID=sc_product_pictures.productID';
+    ON sc_products.productID=sc_product_pictures.productID 
+    WHERE sc_products.categoryID=591 
+    AND sc_products.viewed_times>10 
+    LIMIT 1';
 
 }
 
